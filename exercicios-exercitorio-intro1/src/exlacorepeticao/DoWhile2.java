@@ -8,7 +8,8 @@ public class DoWhile2
 {
 	public static void main(String[] args) 
 	{
-		int valor,contmult=0,somamult=0,mediamult;
+		int contmult=0;
+		float valor,somamult=0,mediamult;
 		Scanner ler = new Scanner(System.in);
 		
 		do

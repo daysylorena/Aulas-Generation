@@ -25,8 +25,18 @@ public class While2
 		{
 			System.out.printf("Entre com a idade: ");
 			idade = ler.nextInt();
+			while(idade<=0 || idade>=130)
+			{
+				System.out.printf("Dado inválido. \nEntre com a idade: ");
+				idade = ler.nextInt();
+			}
 			System.out.printf("Entre com o gênero (1-feminino / 2-masculino / 3-outros): ");
 			sexo = ler.nextInt();
+			while(sexo<=0 || sexo>=4)
+			{
+				System.out.printf("Dado inválido. \nEntre com o gênero (1-feminino / 2-masculino / 3-outros): ");
+				sexo = ler.nextInt();
+			}
 			switch(sexo)
 			{
 			case 1:
@@ -41,6 +51,11 @@ public class While2
 			}
 			System.out.printf("Entre com a característica psicológica (1-calma / 2-nervosa / 3-agressiva): ");
 			psic = ler.nextInt();
+			while(psic<=0 || psic>=4)
+			{
+				System.out.printf("Dado inválido. \nEntre com a característica psicológica (1-calma / 2-nervosa / 3-agressiva): ");
+				psic = ler.nextInt();
+			}
 			switch(psic)
 			{
 			case 1:
@@ -58,19 +73,19 @@ public class While2
 			{
 				femnerv++;
 			}
-			else if(sexo==2 && psic==3)
+			if(sexo==2 && psic==3)
 			{
 				mascagr++;
 			}
-			else if(sexo==3 && psic==1)
+			if(sexo==3 && psic==1)
 			{
 				outroscalm++;
 			}
-			else if(psic==2 && idade>40)
+			if(psic==2 && idade>40)
 			{
 				nerv40++;
 			}
-			else if(psic==1 && idade<18)
+			if(psic==1 && idade<18)
 			{
 				calm18++;
 			}
@@ -79,7 +94,7 @@ public class While2
 		System.out.printf("Há %d pessoas calmas.\n",calma);
 		System.out.printf("Há %d mulheres nervosas.\n",femnerv);
 		System.out.printf("Há %d homens agressivos.\n",mascagr);
-		System.out.printf("Há %d outros calmos.\n",outroscalm);
+		System.out.printf("Há %d outros calmes.\n",outroscalm);
 		System.out.printf("Há %d pessoas nervosas com mais de 40 anos.\n",nerv40);
 		System.out.printf("Há %d pessoas calmas com medos de 18 anos.\n",calm18);		
 	}
